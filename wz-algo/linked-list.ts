@@ -1,23 +1,23 @@
-export class Node {
+export class LinkedListNode {
   name: string
-  next?: Node
+  next?: LinkedListNode
 
-  constructor(name: string, next?: Node) {
+  constructor(name: string, next?: LinkedListNode) {
     this.name = name
     this.next = next
   }
 }
 
 export class LinkedList {
-  head: Node
+  head: LinkedListNode
 
   constructor() {
-    this.head = new Node('head')
+    this.head = new LinkedListNode('head')
   }
 
   // 向链表末尾添加节点
   append(name: string) {
-    const node = new Node(name)
+    const node = new LinkedListNode(name)
     let currentNode = this.head
     while (currentNode.next) {
       currentNode = currentNode.next
@@ -57,13 +57,13 @@ export class LinkedList {
     if (!currentNode) {
       throw new Error('to 节点不存在')
     }
-    const newNode = new Node(name)
+    const newNode = new LinkedListNode(name)
     newNode.next = currentNode.next
     currentNode.next = newNode
   }
 
   // 所有节点按照顺序 append 到 array 中
-  display(headNode: Node) {
+  display(headNode: LinkedListNode) {
     let currentNode = headNode.next
     const result = []
     while (currentNode) {
