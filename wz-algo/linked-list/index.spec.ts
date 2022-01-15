@@ -1,4 +1,4 @@
-import { LinkedList } from './linked-list'
+import { LinkedList } from '.'
 
 test('append', () => {
   const linkedList = new LinkedList()

@@ -1,0 +1,10 @@
+import { Stack } from './linked-list'
+
+test('push', () => {
+  const stack = new Stack()
+  stack.push('a')
+  stack.push('b')
+  expect(stack.head.next?.name).toEqual('a')
+  expect(stack.head.next?.next?.name).toEqual('b')
+  expect(stack.top?.name).toEqual('b')
+})

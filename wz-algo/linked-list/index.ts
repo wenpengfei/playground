@@ -2,9 +2,8 @@ export class LinkedListNode {
   name: string
   next?: LinkedListNode
 
-  constructor(name: string, next?: LinkedListNode) {
+  constructor(name: string) {
     this.name = name
-    this.next = next
   }
 }
 
@@ -23,6 +22,7 @@ export class LinkedList {
       currentNode = currentNode.next
     }
     currentNode.next = node
+    return node
   }
 
   // 查找父节点
