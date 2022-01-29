@@ -63,8 +63,8 @@ export class LinkedList {
   }
 
   // 所有节点按照顺序 append 到 array 中
-  display(headNode: LinkedListNode) {
-    let currentNode = headNode.next
+  display(headNode?: LinkedListNode) {
+    let currentNode = headNode ? headNode.next : this.head.next
     const result = []
     while (currentNode) {
       result.push(currentNode.name)
