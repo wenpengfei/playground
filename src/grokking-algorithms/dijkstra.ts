@@ -52,8 +52,6 @@ export const dijkstra = (graph: Graph, weight: PathWeight) => {
       }
     }
     currentDijkstraModel.visited = true
-    console.log(dijkstraModels)
-    console.log(getCurrentModel(dijkstraModels))
     currentDijkstraModel = getCurrentModel(dijkstraModels)
   }
 }

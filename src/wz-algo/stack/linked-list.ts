@@ -1,4 +1,4 @@
-import { LinkedListNode, LinkedList } from './../linked-list'
+import { LinkedList, LinkedListNode } from '@/data-structure/linked-list'
 
 export class Stack extends LinkedList {
   top: LinkedListNode | undefined
