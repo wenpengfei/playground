@@ -1,7 +1,7 @@
 import { LinkedList } from '@/data-structure/linked-list'
 import { mergeTwoLists } from './mergeTwoLists'
 
-test('success', () => {
+test('mergeTwoLists', () => {
   const linkedList1 = new LinkedList()
   linkedList1.append('1')
   linkedList1.append('3')
