@@ -9,15 +9,16 @@ test('getIntersectionNode', () => {
   nodeC1.next = nodeC2
   nodeC2.next = nodeC3
 
-  const nodeA = new LinkedList()
-  nodeA.append('a1')
-  nodeA.append('a2')
-  const nodeATail = nodeA.append('a3')
+  const linkedListA = new LinkedList()
+  linkedListA.append('a1')
+  linkedListA.append('a2')
+  const nodeATail = linkedListA.append('a3')
   nodeATail.next = nodeC1
 
-  const nodeB = new LinkedList()
-  nodeB.append('b1')
-  nodeB.append('b2')
-  const nodeBTail = nodeB.append('b3')
+  const linkedListB = new LinkedList()
+  linkedListB.append('b1')
+  const nodeBTail = linkedListB.append('b2')
   nodeBTail.next = nodeC1
+  const commonNode = getIntersectionNode(linkedListA, linkedListB)
+  expect(commonNode?.name).toEqual('c1')
 })
