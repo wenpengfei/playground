@@ -101,4 +101,14 @@ export class LinkedList {
     }
     return slowNode
   }
+
+  findMidNode() {
+    let fastNode: LinkedListNode | undefined = this.head
+    let slowNode: LinkedListNode | undefined = this.head
+    while (fastNode && fastNode.next) {
+      slowNode = slowNode?.next
+      fastNode = fastNode.next.next
+    }
+    return slowNode
+  }
 }

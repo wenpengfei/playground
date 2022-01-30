@@ -73,3 +73,12 @@ test('findEndIndex', () => {
   const result = linkedList.findEndIndex(1)
   expect(result?.name).toEqual('2')
 })
+
+test('findMidNode', () => {
+  const linkedList = new LinkedList()
+  linkedList.append('1')
+  linkedList.append('2')
+  linkedList.append('3')
+  const result = linkedList.findMidNode()
+  expect(result?.name).toEqual('2')
+})
