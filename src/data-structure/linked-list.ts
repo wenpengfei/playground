@@ -116,12 +116,14 @@ export class LinkedList {
 
   // 是否成环
   hasCycle() {
-    let currentNode: LinkedListNode | undefined = this.head.next
-    while (currentNode) {
-      if (currentNode.name === 'head') {
+    let fastNode: LinkedListNode | undefined = this.head
+    let slowNode: LinkedListNode | undefined = this.head
+    while (fastNode && fastNode.next) {
+      slowNode = slowNode?.next
+      fastNode = fastNode.next.next
+      if (slowNode === fastNode) {
         return true
       }
-      currentNode = currentNode.next
     }
     return false
   }

@@ -87,9 +87,11 @@ test('hasCycle', () => {
   const linkedList = new LinkedList()
   const firstNode = new LinkedListNode('1')
   const secondNode = new LinkedListNode('2')
+  const thirdNode = new LinkedListNode('3')
   linkedList.head.next = firstNode
   firstNode.next = secondNode
-  secondNode.next = linkedList.head
+  secondNode.next = thirdNode
+  thirdNode.next = firstNode
   const hasCycle = linkedList.hasCycle()
   expect(hasCycle).toEqual(true)
 })
