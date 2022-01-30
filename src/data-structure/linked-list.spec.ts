@@ -1,4 +1,4 @@
-import { LinkedList } from './linked-list'
+import { LinkedList, LinkedListNode } from './linked-list'
 
 test('append', () => {
   const linkedList = new LinkedList()
@@ -81,4 +81,15 @@ test('findMidNode', () => {
   linkedList.append('3')
   const result = linkedList.findMidNode()
   expect(result?.name).toEqual('2')
+})
+
+test('hasCycle', () => {
+  const linkedList = new LinkedList()
+  const firstNode = new LinkedListNode('1')
+  const secondNode = new LinkedListNode('2')
+  linkedList.head.next = firstNode
+  firstNode.next = secondNode
+  secondNode.next = linkedList.head
+  const hasCycle = linkedList.hasCycle()
+  expect(hasCycle).toEqual(true)
 })

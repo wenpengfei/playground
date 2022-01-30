@@ -88,6 +88,7 @@ export class LinkedList {
     return this.head
   }
 
+  // 查找倒数第 n 个节点
   findEndIndex(index: number) {
     let fastNode: LinkedListNode | undefined = this.head
     let slowNode: LinkedListNode | undefined = this.head
@@ -102,6 +103,7 @@ export class LinkedList {
     return slowNode
   }
 
+  // 查找中点
   findMidNode() {
     let fastNode: LinkedListNode | undefined = this.head
     let slowNode: LinkedListNode | undefined = this.head
@@ -110,5 +112,17 @@ export class LinkedList {
       fastNode = fastNode.next.next
     }
     return slowNode
+  }
+
+  // 是否成环
+  hasCycle() {
+    let currentNode: LinkedListNode | undefined = this.head.next
+    while (currentNode) {
+      if (currentNode.name === 'head') {
+        return true
+      }
+      currentNode = currentNode.next
+    }
+    return false
   }
 }
