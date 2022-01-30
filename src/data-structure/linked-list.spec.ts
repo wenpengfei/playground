@@ -64,3 +64,12 @@ test('reverse', () => {
   const result = linkedList.display(reversed)
   expect(result).toEqual(['3', '2', '1'])
 })
+
+test('findEndIndex', () => {
+  const linkedList = new LinkedList()
+  linkedList.append('1')
+  linkedList.append('2')
+  linkedList.append('3')
+  const result = linkedList.findEndIndex(1)
+  expect(result?.name).toEqual('2')
+})

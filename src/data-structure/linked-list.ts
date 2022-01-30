@@ -87,4 +87,18 @@ export class LinkedList {
     this.head.next = prevNode
     return this.head
   }
+
+  findEndIndex(index: number) {
+    let fastNode: LinkedListNode | undefined = this.head
+    let slowNode: LinkedListNode | undefined = this.head
+    let count = 0
+    while (fastNode?.next) {
+      fastNode = fastNode.next
+      if (count >= index) {
+        slowNode = slowNode!.next
+      }
+      count++
+    }
+    return slowNode
+  }
 }
