@@ -1,4 +1,4 @@
-class Queue<T = any> {
+export default class Queue<T = any> {
   constructor() {}
   private list: T[] = []
 
@@ -8,5 +8,9 @@ class Queue<T = any> {
 
   shift() {
     return this.list.shift()
+  }
+
+  current() {
+    return this.list
   }
 }

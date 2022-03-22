@@ -1,4 +1,4 @@
-class Stack<T = any> {
+export default class Stack<T = any> {
   constructor() {}
   private list: T[] = []
 
@@ -8,5 +8,9 @@ class Stack<T = any> {
 
   pop() {
     return this.list.pop()
+  }
+
+  current() {
+    return this.list
   }
 }
