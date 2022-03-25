@@ -1,25 +1,38 @@
-type LinkedListNodeType<T> = LinkedListNode<T> | null
-
-class LinkedListNode<T = any> {
+export class LinkedListNode<T = any> {
   value: T
-  next: LinkedListNodeType<T>
+  next?: LinkedListNode<T>
 
   constructor(value: T) {
     this.value = value
-    this.next = null
+    this.next = undefined
   }
 }
 
-class LinkedList<T = any> {
-  head: LinkedListNode
-  tail: LinkedListNode
-  constructor() {
-    const head = new LinkedListNode('head')
+export class LinkedList<T = any> {
+  head: LinkedListNode<T>
+
+  constructor(value: T) {
+    const head = new LinkedListNode(value)
     this.head = head
-    this.tail = head
   }
 
   append(value: T) {
-    this.tail.next = new LinkedListNode(value)
+    const node = new LinkedListNode(value)
+    let currentNode = this.head
+    while (currentNode?.next) {
+      currentNode = currentNode.next
+    }
+    currentNode.next = node
+    return this.head
+  }
+
+  print() {
+    let result = [this.head.value]
+    let currentNode = this.head
+    while (currentNode.next) {
+      currentNode = currentNode.next
+      result.push(currentNode.value)
+    }
+    return result
   }
 }
